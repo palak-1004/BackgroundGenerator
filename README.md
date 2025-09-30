@@ -28,6 +28,9 @@ With this tool, you can easily create beautiful gradient backgrounds, preview th
 
 ## 📂 Project Structure
 ├── index.html
+
 ├── style.css
+
 ├── script.js
+
 └── README.md
