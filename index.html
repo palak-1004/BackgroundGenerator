@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gradient Background Generator</title>
+    <link rel="stylesheet" href="sheet.css">
+</head>
+
+<body>
+
+
+    <nav>
+        <h1>Gradient Background Generator</h1>
+    </nav>
+    <div class="app" role="application" aria-label="Gradient background generator">
+        <div class="panel" aria-hidden="false">
+            <p class="muted">Create gradients and copy CSS. Real-time preview.</p>
+
+            <div class="controlsScroll">
+                <div class="controls">
+                    <div>
+                        <label>Gradient Type
+                            <select id="gradientType" title="Choose gradient type">
+                                <option value="linear">Linear</option>
+                                <option value="radial">Radial</option>
+                                <option value="conic">Conic</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div id="angleRow">
+                        <label>Angle (<span id="angleVal">90</span>°)
+                            <input id="angle" type="range" min="0" max="360" value="90" />
+                        </label>
+                    </div>
+
+                    <div id="radialOptions" style="display:none">
+                        <label>Radial size/shape
+                            <select id="radialShape">
+                                <option value="ellipse">ellipse</option>
+                                <option value="circle">circle</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>Color stops
+                            <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+                                <button id="addStop" class="btn secondary" title="Add color stop">+ Add stop</button>
+                                <button id="randomize" class="btn secondary" title="Randomize">Random</button>
+                                <button id="reset" class="btn secondary" title="Reset">Reset</button>
+                            </div>
+                        </label>
+                        <div class="stops" id="stops"></div>
+                    </div>
+
+                    <div>
+                        <label>Presets <small style="margin-left:8px;color:var(--muted)">click to apply</small></label>
+                        <div class="presets" id="presets">
+                            <!-- presets inserted by JS -->
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Generated CSS</label>
+                        <textarea id="cssOut" readonly></textarea>
+                    </div>
+
+                    <div class="footerRow" style="margin-top:8px">
+                        <div style="display:flex;gap:8px">
+                            <button id="copyBtn" class="btn">Copy CSS</button>
+                            <button id="downloadBtn" class="btn">Download PNG</button>
+                        </div>
+                        <small id="exportNote" class="mutedBlock">PNG export supports linear & radial</small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="previewWrap">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                    <h1 style="font-size:16px;margin:0">Preview</h1>
+                    <p class="muted" style="margin:0">Live preview of the generated background</p>
+                </div>
+                <div style="display:flex;gap:8px">
+                    <button id="toggleRepeating" class="btn secondary">Repeating: Off</button>
+                </div>
+            </div>
+
+            <div class="preview" id="preview" role="img" aria-label="Gradient preview">
+                <div class="info" id="previewInfo">linear-gradient(90deg, #ff7a7a 0%, #ffd27a 100%)</div>
+            </div>
+
+            <div style="display:flex;gap:12px">
+                <div style="flex:1">
+                    <label>Width (px)</label>
+                    <input id="exportWidth" type="number" value="1200" min="100" />
+                </div>
+                <div style="width:140px">
+                    <label>Height (px)</label>
+                    <input id="exportHeight" type="number" value="800" min="100" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
