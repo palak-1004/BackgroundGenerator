@@ -6,7 +6,7 @@ With this tool, you can easily create beautiful gradient backgrounds, preview th
 ---
 
 ## 🚀 Live Demo
-👉 [View Live Demo]([https://your-demo-link-here.com](https://palak-1004.github.io/BackgroundGenerator/))
+👉 [View Live Demo](https://palak-1004.github.io/BackgroundGenerator/)
 
 ---
 
